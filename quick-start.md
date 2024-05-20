@@ -33,3 +33,21 @@
 ## 关联管道
 
 ![关联](/assets/q/r.png)
+
+## 发送信息
+
+简单版本: 直接通过 get 请求发送信息
+
+```shell
+curl https://pusher.kentxxq.com/pusher.webapi/Room/SendMessageByGet/你的房间code?content=123
+```
+
+复杂版本: 通过 post 发送 json 数据到 pusher,同时使用特定的[字符串模板](/string-template) code 解析.
+
+```shell
+curl -X POST https://pusher.kentxxq.com/pusher.webapi/Room/SendMessageByPost/你的房间code?templateCode=你的模板code \
+     -H "Content-Type: application/json" \
+     -d '{"content":"123"}'
+```
+
+> 如果你不使用 templateCode 参数,将会把`原始json`发送给管道
