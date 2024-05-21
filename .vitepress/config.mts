@@ -20,8 +20,8 @@ export default defineConfig({
         ],
       },
       {
-        text: "部署",
-        items: [{ text: "快速部署", link: "/todo" }],
+        text: "自定义",
+        items: [{ text: "部署", link: "/deploy" }],
       },
     ],
 
