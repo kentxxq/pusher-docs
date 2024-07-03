@@ -29,6 +29,7 @@
 - `管道名称`: 方便用户记忆
 - `管道类型`: 飞书/钉钉/企业微信...不同管道有不同的 json 格式
 - `管道地址`: 管道的 url 地址
+- `代理地址`: 管道的代理地址,`https://用户名:密码@proxy.com:7890`
 
 ## 关联管道
 
@@ -42,12 +43,17 @@
 curl https://pusher.kentxxq.com/pusher.webapi/Room/SendMessageByGet/你的房间code?content=123
 ```
 
-复杂版本: 通过 post 发送 json 数据到 pusher,同时使用特定的[字符串模板](/string-template) code 解析.
+复杂版本
+
+- 通过 post 发送 json 数据
+- 传递参数
+  - `templateCode=you-template-code` 使用特定的[字符串模板](/string-template) `you-template-code` 解析 json
+  - `roomKey=111` 房间需要密钥 `111` 才能访问
 
 ```shell
-curl -X POST https://pusher.kentxxq.com/pusher.webapi/Room/SendMessageByPost/你的房间code?templateCode=你的模板code \
+curl -X POST https://pusher.kentxxq.com/pusher.webapi/Room/SendMessageByPost/你的房间code?templateCode=you-template-code&roomKey=111 \
      -H "Content-Type: application/json" \
      -d '{"content":"123"}'
 ```
 
-> 如果你不使用 templateCode 参数,将会把`原始json`发送给管道
+> 如果你不使用 templateCode 参数,将会把`原始json`发送给管道,适用于

@@ -2,7 +2,7 @@
 
 ## 编译部署
 
-前端构建后,使用 nginx 部署挂载
+前端构建后将`./dist`目录使用`nginx`挂载即可
 
 ```shell
 git clone https://github.com/kentxxq/pusher-ui

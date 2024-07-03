@@ -26,7 +26,7 @@ outline: deep
 - 创建一个飞书管道
 - 房间关联管道
 
-### 配置
+### 配置字符串模板
 
 ![创建企业微信模板示例](/assets/string-template/1.png)
 
