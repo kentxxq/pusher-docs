@@ -56,4 +56,4 @@ curl -X POST https://pusher.kentxxq.com/pusher.webapi/Room/SendMessageByPost/你
      -d '{"content":"123"}'
 ```
 
-> 如果你不使用 templateCode 参数,将会把`原始json`发送给管道,适用于
+> 如果你不使用 templateCode 参数,将会把`原始json`发送给管道

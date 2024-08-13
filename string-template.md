@@ -6,15 +6,15 @@ outline: deep
 
 ## 由来
 
-在日常工作中,总会遇到这样的问题
+在日常工作中,总会遇到这样的问题:
 
 - `grafana` 在配置告警策略, 发现无法发送到飞书
 - `webhook` 里有很多数据,但我只需要部分数据
 
-所以字符串模板的功能就孕育而生. 主要的作用:
+所以字符串模板的功能就孕育而生
 
 - 接受任意格式的 `json` 数据, 通过`jsonpath`取值.
-- 输出可以自定义的格式.
+- 输出自定义格式.
 
 ## 使用
 
@@ -52,6 +52,18 @@ grafana 里的配置告警啦
 
 by pusher
 ```
+
+## 内置模板
+
+> 不定期更新内置模板
+> https://github.com/kentxxq/pusher/blob/main/pusher.webapi/Service/Database/DBService.cs#L132
+
+- `Base`:
+  - 如果不传递`templateCode`参数,会把`json`当做纯文本. 所以需要内置一个模板把数据取出来.
+  - 转发 json 中`content`的值
+- `Lark`: 接收[飞书的 webhook 请求](https://open.feishu.cn/document/client-docs/bot-v3/add-custom-bot#756b882f), 转发`content.text`的内容
+- `DingTalk`: 接收[钉钉的 webhook 请求](https://open.dingtalk.com/document/orgapp/robot-message-types-and-data-format#title-z74-8to-i7e), 转发`text.content`的内容
+- `ComWechat`: 接收[企业微信的 webhook 请求](https://developer.work.weixin.qq.com/document/path/91770#%E6%96%87%E6%9C%AC%E7%B1%BB%E5%9E%8B), 转发`text.content`的内容
 
 ## 说明
 
