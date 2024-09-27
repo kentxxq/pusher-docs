@@ -38,23 +38,24 @@
 
 ## 发送信息
 
-简单版本: 直接通过 get 请求发送信息
+**简单版本**: 直接通过 get 请求发送信息
 
 ```shell
 curl https://pusher.kentxxq.com/pusher.webapi/Room/SendMessageByGet/你的房间code?content=123
 ```
 
-复杂版本
+**复杂版本**
 
 - 通过 post 发送 json 数据
 - 传递参数
   - `templateCode=you-template-code` 使用特定的[字符串模板](/string-template) `you-template-code` 解析 json
   - `roomKey=111` 房间需要密钥 `111` 才能访问
+  - 可以使用`\n`进行换行
 
 ```shell
 curl -X POST https://pusher.kentxxq.com/pusher.webapi/Room/SendMessageByPost/你的房间code?templateCode=you-template-code&roomKey=111 \
      -H "Content-Type: application/json" \
-     -d '{"content":"123"}'
+     -d '{"content":"123\n你好"}'
 ```
 
 > 如果你不使用 templateCode 参数,将会把`原始json`发送给管道
