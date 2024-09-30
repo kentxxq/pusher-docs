@@ -13,15 +13,16 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: "使用方法",
-        items: [
-          { text: "快速上手", link: "/quick-start" },
-          { text: "字符串模板", link: "/string-template" },
-        ],
+        text: "入门",
+        items: [{ text: "快速上手", link: "/quick-start" }],
       },
       {
-        text: "自定义",
-        items: [{ text: "部署", link: "/deploy" }],
+        text: "高级玩法",
+        items: [
+          { text: "字符串模板", link: "/string-template" },
+          { text: "部署", link: "/deploy" },
+          { text: "FAQ", link: "/faq" },
+        ],
       },
     ],
 
