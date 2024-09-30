@@ -8,7 +8,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "主页", link: "/" },
-      // { text: "快速上手", link: "/markdown-examples" },
+      // { icon: "github", link: "https://github.com/kentxxq/pusher" },
     ],
 
     sidebar: [
@@ -26,10 +26,10 @@ export default defineConfig({
       },
     ],
 
-    // socialLinks: [
-    //   { icon: "github", link: "https://github.com/kentxxq/pusher-docs" },
-    //   { icon: "github", link: "https://github.com/kentxxq/pusher-docs" },
-    //   { icon: "github", link: "https://github.com/kentxxq/pusher-docs" },
-    // ],
+    socialLinks: [
+      { icon: "github", link: "https://github.com/kentxxq/pusher" },
+      // { icon: "github", link: "https://github.com/kentxxq/pusher-docs" },
+      // { icon: "github", link: "https://github.com/kentxxq/pusher-docs" },
+    ],
   },
 });
