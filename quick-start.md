@@ -42,6 +42,10 @@
 
 ```shell
 curl https://pusher.kentxxq.com/pusher.webapi/Room/SendMessageByGet/你的房间code?content=123
+
+# 非 ascii 字符转码
+curl -G "https://pusher.kentxxq.com/pusher.webapi/Room/SendMessageByGet/你的房间code" \
+--data-urlencode "你好"
 ```
 
 **复杂版本**
